@@ -5,6 +5,9 @@ import org.junit.Test;
 import com.designpattern.composit.Component;
 import com.designpattern.composit.impl.Composite;
 import com.designpattern.composit.impl.Leaf;
+import com.designpattern.observer.Channel;
+import com.designpattern.observer.Subject;
+import com.designpattern.observer.Subscriber;
 import com.designpattern.prototype.BookShop;
 
 public class DesignPatternTest {
@@ -49,5 +52,38 @@ public class DesignPatternTest {
 		
 		
 	}
+	
+	 @Test
+	 public void testObserverDesignPattern() {
+		 Subscriber sb1= new Subscriber("Akshay");
+		 Subscriber sb2= new Subscriber("Sunil");
+		 Subscriber sb3= new Subscriber("Vibhav");
+		 Subscriber sb4= new Subscriber("Ajay");
+		 Subscriber sb5= new Subscriber("Ratnesh");
+
+		 
+		 Subject ch1=new Channel();
+		 ch1.setName("Learn Java by Mrinmay");
+		 ch1.subsCribe(sb1);
+		 ch1.subsCribe(sb2);
+		 ch1.subsCribe(sb3);
+		 ch1.subsCribe(sb4);
+		 ch1.subsCribe(sb5);
+		 
+		 sb1.subscribeChannel(ch1);
+		 sb2.subscribeChannel(ch1);
+		 sb3.subscribeChannel(ch1);
+		 sb4.subscribeChannel(ch1);
+		 sb5.subscribeChannel(ch1);
+
+		 ch1.unSubsCribe(sb3);
+		 System.out.println("\n");
+		 ch1.upload("How to learn Spring Boot programming??");
+		 
+		 ch1.notifySubsCriber();
+		 
+		 
+		 
+	 }
 
 }
