@@ -5,6 +5,7 @@ import org.junit.Test;
 import com.designpattern.composit.Component;
 import com.designpattern.composit.impl.Composite;
 import com.designpattern.composit.impl.Leaf;
+import com.designpattern.prototype.BookShop;
 
 public class DesignPatternTest {
 	
@@ -33,14 +34,18 @@ public class DesignPatternTest {
 		computer.addComponent(peri);
 		
 		cabinet.showPrice();
-		
-		
-		
-		
-		
-		
-		
-		
+	}
+	
+	@Test
+	public void testPrototypeDesignPattern() throws CloneNotSupportedException {
+		BookShop bsh1= new BookShop();
+		bsh1.setShopName("Novelty");
+		bsh1.loadBook();		
+		BookShop bsh2=bsh1.clone();
+		bsh2.setShopName("Jasper");
+		bsh1.getB().remove(2);
+		System.out.println("BookShop1 :" + bsh1);
+		System.out.println("BookShop1 :" + bsh2);
 		
 		
 	}
