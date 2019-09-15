@@ -9,5 +9,4 @@ public class PenMarker implements Pen{
 		p.write();
 		prkpn.write();
 	}
-
 }

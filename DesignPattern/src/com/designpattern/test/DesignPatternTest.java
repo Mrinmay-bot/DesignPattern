@@ -7,6 +7,8 @@ import com.designpattern.adapter.PenMarker;
 import com.designpattern.composit.Component;
 import com.designpattern.composit.impl.Composite;
 import com.designpattern.composit.impl.Leaf;
+import com.designpattern.factory.OS;
+import com.designpattern.factory.RegisterOperationOsType;
 import com.designpattern.observer.Channel;
 import com.designpattern.observer.Subject;
 import com.designpattern.observer.Subscriber;
@@ -85,11 +87,18 @@ public class DesignPatternTest {
 		 ch1.notifySubsCriber(); 
 		 
 	 }
-
 	 
 	 @Test
 	 public void testAdapterDesignPattern() {
 		 Pen p=new PenMarker();
 		 p.startWritingAssignMentUsingPen();
+	 }
+	 
+	 
+	 @Test
+	 public void testFactoryDesignPattern() {
+        RegisterOperationOsType rostp=new RegisterOperationOsType();
+        OS os=rostp.getOsType("ios");
+        os.spec();
 	 }
 }
