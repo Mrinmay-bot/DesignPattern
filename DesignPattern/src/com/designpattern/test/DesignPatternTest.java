@@ -2,6 +2,8 @@ package com.designpattern.test;
 
 import org.junit.Test;
 
+import com.designpattern.adapter.Pen;
+import com.designpattern.adapter.PenMarker;
 import com.designpattern.composit.Component;
 import com.designpattern.composit.impl.Composite;
 import com.designpattern.composit.impl.Leaf;
@@ -80,10 +82,14 @@ public class DesignPatternTest {
 		 System.out.println("\n");
 		 ch1.upload("How to learn Spring Boot programming??");
 		 
-		 ch1.notifySubsCriber();
-		 
-		 
+		 ch1.notifySubsCriber(); 
 		 
 	 }
 
+	 
+	 @Test
+	 public void testAdapterDesignPattern() {
+		 Pen p=new PenMarker();
+		 p.startWritingAssignMentUsingPen();
+	 }
 }
