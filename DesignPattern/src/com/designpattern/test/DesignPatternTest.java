@@ -13,6 +13,7 @@ import com.designpattern.observer.Channel;
 import com.designpattern.observer.Subject;
 import com.designpattern.observer.Subscriber;
 import com.designpattern.prototype.BookShop;
+import com.designpattern.singleton.Abc;
 
 public class DesignPatternTest {
 	
@@ -100,5 +101,11 @@ public class DesignPatternTest {
         RegisterOperationOsType rostp=new RegisterOperationOsType();
         OS os=rostp.getOsType("ios");
         os.spec();
+	 }
+	 
+	 @Test
+	 public void testSingletonDesignPattern() {
+		 Abc ob=Abc.getInstance();
+		 System.out.println("Object for SingletonDesignPattern :" + ob);
 	 }
 }
